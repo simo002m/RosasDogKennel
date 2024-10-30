@@ -1,10 +1,10 @@
 
     public class Owner {
-        private int fldDogId;       // Identifier for the dog
-        private String fldDogName;  // Name of the Dog
+        private int fldOwnerId;       // Identifier for the dog
+        private String fldOwnerName;  // Name of the Dog
         private String fldDogBreed; // Name of the Dog Breed
 
-        public int getFldDogId() {
+        public int getFldOwnerId() {
             return fldDogId;
         }
 
