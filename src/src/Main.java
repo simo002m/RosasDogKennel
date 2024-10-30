@@ -7,7 +7,7 @@ public class Main {
 
     private static final String URL = "jdbc:sqlserver://localhost;portNumber=1433;databaseName=dbRosasDogKennel";
     private static final String USERNAME = "sa"; // replace with your username
-    private static final String PASSWORD = "sql"; // replace with your password
+    private static final String PASSWORD = "1234"; // replace with your password
 
 
     public static Connection getConnection() throws Exception {
@@ -35,6 +35,12 @@ public class Main {
         DogDao.readAllDogs();
 
         */
+
+        Connection conn = getConnection();
+
+        OwnerDao dao = new OwnerDaoImpl();
+
+        dao.readAllOwners();
 
         System.out.println("slut");
     }

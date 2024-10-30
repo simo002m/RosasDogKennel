@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class OwnerDaoImpl implements DogDao {
+public class OwnerDaoImpl implements OwnerDao {
 
     private static final String URL = "jdbc:sqlserver://localhost;instanceName=Mads;portNumber=1433;databaseName=dbRosasDogKennel";
     private static final String USERNAME = "sa"; // replace with your username
@@ -17,56 +17,58 @@ public class OwnerDaoImpl implements DogDao {
         return conn;
     }
 
-    public void createdog(Dog dog) throws Exception {
-        String sql = "INSERT INTO tblDog VALUES (?, ?, ?)";
+    public void createOwner(Owner owner) throws Exception {
+        String sql = "INSERT INTO tblOwner VALUES (?, ?, ?)";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, dog.getFldDogId());
-        pstmt.setString(2, dog.getFldDogName());
-        pstmt.setString(3, dog.getFldDogBreed());
+        pstmt.setInt(1, owner.getFldOwnerId());
+        pstmt.setString(2, owner.getFldOwnerName());
+        pstmt.setDate(3, owner.getFldDateOfBirth());
+
         int affectedRows = pstmt.executeUpdate();
+
         if (affectedRows > 0) {
-            System.out.println("Dog added successfully.");
+            System.out.println("Owner added successfully");
         } else {
-            System.out.println("Failed to add the dog.");
+            System.out.println("Failed to add the Owner");
         }
     }
 
     @Override
-    public void readDog(int DogId) throws Exception{
-        String sql = "SELECT * FROM tblDog WHERE fldDogId  = ?";
+    public void readOwner(int ownerID) throws Exception{
+        String sql = "SELECT * FROM tblOwner WHERE fldOwnerID  = ?";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, DogId);
+        pstmt.setInt(1, ownerID);
         ResultSet rs = pstmt.executeQuery();
         if (rs.next()) {
-            Dog dog = new Dog();
-            dog.setFldDogId(rs.getInt(1));
-            dog.setFldDogName(rs.getString(2));
-            dog.setFldDogBreed(rs.getString(3));
-            System.out.println(dog.getFldDogId() + " "+ dog.getFldDogName()+ " "+ dog.getFldDogBreed());
+            Owner owner = new Owner();
+            owner.setFldOwnerID(rs.getInt(1));
+            owner.setFldOwnerName(rs.getString(2));
+            owner.setFldDateOfBirth(rs.getDate(3));
+            System.out.println(owner.getFldOwnerId() + " " + owner.getFldOwnerName() + " " + owner.getFldDateOfBirth());
         } else {
-            System.out.println("No Dog found with ID: " + DogId);
+            System.out.println("No owner found with ID: " + ownerID);
         }
     }
 
     @Override
-    public void readAllDogs() throws Exception{
-        String sql = "SELECT * FROM tblDog";
+    public void readAllOwners() throws Exception{
+        String sql = "SELECT * FROM tblOwner";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
-        boolean hasDogs = false;
+        boolean hasOwners = false;
         while (rs.next()) {
-            hasDogs = true;
-            Dog dog = new Dog();
-            dog.setFldDogId(rs.getInt(1));
-            dog.setFldDogName(rs.getString(2));
-            dog.setFldDogBreed(rs.getString(3));
-            System.out.println(dog.getFldDogId()+" "+ dog.getFldDogName()+dog.getFldDogBreed());
+            hasOwners = true;
+            Owner owner = new Owner();
+            owner.setFldOwnerID(rs.getInt(1));
+            owner.setFldOwnerName(rs.getString(2));
+            owner.setFldDateOfBirth(rs.getDate(3));
+            System.out.println(owner.getFldOwnerId()+" "+ owner.getFldOwnerName() + "" + owner.getFldDateOfBirth());
         }
-        if (!hasDogs) {
-            System.out.println("No dogs found.");
+        if (!hasOwners) {
+            System.out.println("No owners found.");
         }
     }
 }

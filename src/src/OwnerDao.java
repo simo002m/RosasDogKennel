@@ -1,7 +1,7 @@
 public interface OwnerDao {
-        void readDog(int no) throws Exception;
-        void readAllDogs() throws Exception;
-        void createdog(Dog dog) throws Exception;
+        void readOwner(int no) throws Exception;
+        void readAllOwners() throws Exception;
+        void createOwner(Owner owner) throws Exception;
     }
 
 

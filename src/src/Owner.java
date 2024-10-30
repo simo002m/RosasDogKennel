@@ -1,12 +1,12 @@
-import java.util.Date;
+import java.sql.Date;
 
 public class Owner {
-        private int fldOwnerId;
-        private String fldOwnerName;
-        private Date fldDateOfBirth;
-        private String fldEmail;
-        private String fldPhoneNumber;
-        private String fldZipCode;
+    private int fldOwnerID;
+    private String fldOwnerName;
+    private Date fldDateOfBirth;
+    private String fldEmail;
+    private String fldPhoneNumber;
+    private String fldZipCode;
 
     public Owner(String fldOwnerName, Date fldDateOfBirth, String fldEmail, String fldPhoneNumber, String fldZipCode) {
         this.fldOwnerName = fldOwnerName;
@@ -21,23 +21,43 @@ public class Owner {
     }
 
     public int getFldOwnerId() {
-            return fldOwnerId;
+            return fldOwnerID;
         }
 
-    public Date getFldDogBreed() {
-        return fldDogBreed;
+    public void setFldOwnerID(int fldOwnerID) {
+        this.fldOwnerID = fldOwnerID;
     }
 
-    public String getFldDogName() {
-            return fldDogName;
-        }
+    public String getFldOwnerName() {
+        return fldOwnerName;
+    }
 
-    public void setFldDogName(String fldDogName) {
-            this.fldDogName = fldDogName;
-        }
+    public void setFldOwnerName(String fldOwnerName) {
+        this.fldOwnerName = fldOwnerName;
+    }
 
-    public void setFldDogBreed(String fldDogBreed) {
-            this.fldDogBreed = fldDogBreed;
-        }
+    public Date getFldDateOfBirth() {
+        return fldDateOfBirth;
+    }
+
+    public void setFldDateOfBirth(Date fldDateOfBirth) { this.fldDateOfBirth = fldDateOfBirth; }
+
+    public String getFldEmail() {
+        return fldEmail;
+    }
+
+    public void setEmail(String fldEmail) { this.fldEmail = fldEmail; }
+
+    public String getFldPhoneNumber() {
+        return fldPhoneNumber;
+    }
+
+    public void setFldPhoneNumber(String fldPhoneNumber) { this.fldPhoneNumber = fldPhoneNumber; }
+
+    public String getFldZipCode() {
+        return fldZipCode;
+    }
+
+    public void setFldZipCode(String fldZipCode) { this.fldZipCode = fldZipCode; }
 
 }
