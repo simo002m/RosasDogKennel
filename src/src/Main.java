@@ -24,18 +24,20 @@ public class Main {
 
         Connection conn = getConnection();
 
-        /*
+
         DogDao dao = new DogDaoImpl();
 
         //dao.readDepartment("d1");
 
         //Department d = new Department("d4","fishing","New York");
         //dao.createDog(d);
+        //Dog f = new Dog(1,3,"Fido", 2020, 5, "Puddel", "Ingen", "2024-08-29", 3, "Yes", "Yes", "Yes", "Doktor Oetker", "Luksus Tørfoder", 80);
 
+        //dao.createdog(f);
         dao.readAllDogs();
 
 
-        */
+
         System.out.println("slut");
     }
 }

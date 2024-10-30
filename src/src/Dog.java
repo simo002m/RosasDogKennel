@@ -8,7 +8,7 @@ public class Dog {
     private int fldYearBorn; //Dogs year of birth
     private double fldWeight; // dogs weight
     private String fldSpecialNeeds; // comments if it needs medication or other type of special needs
-    private Date fldDateArrived; // the Date the dog arrives
+    private String fldDateArrived; // the Date the dog arrives
     private int fldExpectedStayDays; //the days the dog is expected to stay
     private String fldVaccinated; // is it Vaccinated
     private String fldFleeTreatment; //has it gotten Flee treatment
@@ -57,11 +57,11 @@ public class Dog {
         this.fldSpecialNeeds = fldSpecialNeeds;
     }
 
-    public Date getFldDateArrived() {
+    public String getFldDateArrived() {
         return fldDateArrived;
     }
 
-    public void setFldDateArrived(Date fldDateArrived) {
+    public void setFldDateArrived(String fldDateArrived) {
         this.fldDateArrived = fldDateArrived;
     }
 
@@ -137,31 +137,31 @@ public class Dog {
         this.fldDogBreed = fldDogBreed;
     }
 
-        public Dog(int DogId, String DogName, String fldDogBreed) {
-            this.fldDogId = fldDogId;
-            this.fldDogName = fldDogName;
-            this.fldDogBreed = fldDogBreed;
-            this.fldOwnerID = fldOwnerID;
-            this.fldYearBorn = fldYearBorn;
-            this.fldWeight = fldWeight;
-            this.fldSpecialNeeds = fldSpecialNeeds;
-            this.fldDateArrived = fldDateArrived;
-            this.fldExpectedStayDays = fldExpectedStayDays;
-            this.fldVaccinated = fldVaccinated;
-            this.fldFleeTreatment = fldFleeTreatment;
-            this.fldInsured = fldInsured;
-            this.fldPrefferedVet = fldPrefferedVet;
-            this.fldFoodType = fldFoodType;
-            this.fldRecAmountInGram = fldRecAmountInGram;
-
-
-        }
-
-        public Dog() {
-        }
-
+    public Dog(int fldOwnerID, int fldDogId, String fldDogName, int fldYearBorn, float fldWeight,
+               String fldDogBreed, String fldSpecialNeeds, String fldDateArrived, int fldExpectedStayDays,
+               String fldVaccinated, String fldFleeTreatment, String fldInsured, String fldPrefferedVet, String fldFoodType, int fldRecAmountInGram) {
+        this.fldDogId = fldDogId;
+        this.fldDogName = fldDogName;
+        this.fldDogBreed = fldDogBreed;
+        this.fldOwnerID = fldOwnerID;
+        this.fldYearBorn = fldYearBorn;
+        this.fldWeight = fldWeight;
+        this.fldSpecialNeeds = fldSpecialNeeds;
+        this.fldDateArrived = fldDateArrived;
+        this.fldExpectedStayDays = fldExpectedStayDays;
+        this.fldVaccinated = fldVaccinated;
+        this.fldFleeTreatment = fldFleeTreatment;
+        this.fldInsured = fldInsured;
+        this.fldPrefferedVet = fldPrefferedVet;
+        this.fldFoodType = fldFoodType;
+        this.fldRecAmountInGram = fldRecAmountInGram;
 
 
     }
+
+    public Dog() {
+    }
+}
+
 
 
