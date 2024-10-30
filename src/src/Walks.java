@@ -1,19 +1,19 @@
 
     public class Walks {
-        private int fldDogId;       // Identifier for the dog
-        private String fldDogName;  // Name of the Dog
-        private String fldDogBreed; // Name of the Dog Breed
+        private int fldWalksId;       // Identifier for the dog
+        private String fldWalksName;  // Name of the Dog
+        private String fldWalksBreed; // Name of the Dog Breed
 
-        public int getFldDogId() {
-            return fldDogId;
+        public int getFldWalksId() {
+            return fldWalksId;
         }
 
         public void setFldDogId(Integer fldDogId) {
-            this.fldDogId = fldDogId;
+            this.fldWalksId = fldDogId;
         }
 
         public String getFldDogName() {
-            return fldDogName;
+            return fldWalksName;
         }
 
         public void setFldDogName(String fldDogName) {
@@ -21,11 +21,11 @@
         }
 
         public String getFldDogBreed() {
-            return fldDogBreed;
+            return fldWalksBreed;
         }
 
         public void setFldDogBreed(String fldDogBreed) {
-            this.fldDogBreed = fldDogBreed;
+            this.fldWalksBreed = fldDogBreed;
         }
 
         public Walks(int DogId, String DogName, String fldDogBreed) {
