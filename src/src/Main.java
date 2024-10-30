@@ -7,7 +7,7 @@ public class Main {
 
     private static final String URL = "jdbc:sqlserver://localhost;portNumber=1433;databaseName=dbRosasDogKennel";
     private static final String USERNAME = "sa"; // replace with your username
-    private static final String PASSWORD = "sql"; // replace with your password
+    private static final String PASSWORD = "1234"; // replace with your password
 
 
     public static Connection getConnection() throws Exception {
@@ -22,18 +22,20 @@ public class Main {
     public static void main(String args[]) throws Exception {
         System.out.println("start");
 
-        //Connection conn = getConnection();
+        Connection conn = getConnection();
 
-
-        WalksDao dao = new WalksDaoImpl();
+        /*
+        DogDao dao = new DogDaoImpl();
 
         //dao.readDepartment("d1");
 
         //Department d = new Department("d4","fishing","New York");
         //dao.createDog(d);
-        dao.readAllWalks();
+
+        dao.readAllDogs();
 
 
+        */
         System.out.println("slut");
     }
 }
