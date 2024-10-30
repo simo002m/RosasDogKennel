@@ -1,6 +1,6 @@
 
     public class Dog {
-        private Integer fldDogId;       // Identifier for the dog
+        private int fldDogId;       // Identifier for the dog
         private String fldDogName;  // Name of the Dog
         private String fldDogBreed; // Name of the Dog Breed
 

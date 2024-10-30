@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class DogDaoImpl implements DogDao {
 
-    private static final String URL = "jdbc:sqlserver://localhost;instanceName=Mads;portNumber=1433;databaseName=RosasDogKennel";
+    private static final String URL = "jdbc:sqlserver://localhost;instanceName=Mads;portNumber=1433;databaseName=dbRosasDogKennel";
     private static final String USERNAME = "sa"; // replace with your username
     private static final String PASSWORD = "1234"; // replace with your password
 
