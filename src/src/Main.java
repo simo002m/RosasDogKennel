@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String args[]) throws Exception {
         System.out.println("start");
-        /*
+
         //Connection conn = getConnection();
 
 
@@ -34,7 +34,7 @@ public class Main {
 
         DogDao.readAllDogs();
 
-        */
+
 
         System.out.println("slut");
     }
