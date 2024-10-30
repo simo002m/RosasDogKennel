@@ -30,7 +30,7 @@ public class DogDaoImpl implements DogDao {
     }
 
     @Override
-    public void readDog(Integer DogId) throws Exception{
+    public void readDog(int DogId) throws Exception{
         String sql = "SELECT * FROM tblDog WHERE fldDogId  = ?";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);

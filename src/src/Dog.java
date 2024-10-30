@@ -4,7 +4,7 @@
         private String fldDogName;  // Name of the Dog
         private String fldDogBreed; // Name of the Dog Breed
 
-        public Integer getFldDogId() {
+        public int getFldDogId() {
             return fldDogId;
         }
 
@@ -28,14 +28,15 @@
             this.fldDogBreed = fldDogBreed;
         }
 
-        public Dog(Integer DogId, String DogName, String fldDogBreed) {
+        public Dog(int DogId, String DogName, String fldDogBreed) {
             this.fldDogId = fldDogId;
             this.fldDogName = fldDogName;
             this.fldDogBreed = fldDogBreed;
 
         }
 
-
+        public Dog() {
+        }
 
 
 
