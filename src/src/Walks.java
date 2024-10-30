@@ -1,47 +1,60 @@
+import java.util.Date;
 
-    public class Walks {
-        private int fldWalksId;       // Identifier for the dog
-        private String fldWalksName;  // Name of the Dog
-        private String fldWalksBreed; // Name of the Dog Breed
+public class Walks {
+        private int fldWalksID; // Identifier for Walks
+        private String fldStartWalkTime;  // Start time
+        private int fldTimeWalked; // Time of the walk
+        private int fldKMwalked;// Distance of the walk
+        private int fldDogID; //Identifier for Dog
+        private Date fldDateOfWalk; // Date of walk
 
-
-        public Walks(int WalksId, String WalksName, String fldDogBreed) {
-            this.fldWalksId = fldWalksId;
-            this.fldWalksName = fldWalksName;
-            this.fldWalksBreed = fldWalksBreed;
-
+        public Walks(int WalksID, String StartWalkTime, int fldTimeWalked,int fldKMwalked,int fldDogID, Date fldDateOfWalk) {
+            this.fldWalksID = fldWalksID;
+            this.fldStartWalkTime = fldStartWalkTime;
+            this.fldTimeWalked = fldTimeWalked;
+            this.fldKMwalked = fldKMwalked;
+            this.fldDogID = fldDogID;
+            this.fldDateOfWalk = fldDateOfWalk;
         }
 
         public Walks() {
         }
 
-        public int getFldWalksId() {
-            return fldWalksId;
+        public int getFldWalksID() {
+            return fldWalksID;
         }
 
-        public void setFldWalksId(int fldWalksId) {
-            this.fldWalksId = fldWalksId;
+        public void setFldWalksID(int fldWalksId) {
+            this.fldWalksID = fldWalksId;
         }
 
-        public String getFldWalksName() {
-            return fldWalksName;
+        public String getFldStartWalkTime() {
+            return fldStartWalkTime;
         }
 
-        public void setFldWalksName(String fldWalksName) {
-            this.fldWalksName = fldWalksName;
+        public void setFldStartWalkTime(String fldStartWalkTime) {
+            this.fldStartWalkTime = fldStartWalkTime;
         }
 
-        public String getFldWalksBreed() {
-            return fldWalksBreed;
+        public int getFldTimeWalked() {
+            return fldTimeWalked;
         }
 
-        public void setFldWalksBreed(String fldWalksBreed) {
-            this.fldWalksBreed = fldWalksBreed;
+        public void setFldTimeWalked(int fldTimeWalked) {
+            this.fldTimeWalked = fldTimeWalked;
         }
 
+        public int getFldKMwalked() {
+            return fldKMwalked;
+        }
 
+        public int getFldDogID() {
+            return fldDogID;
+        }
 
-
-    }
+        public Date getFldDateOfWalk() {
+            return fldDateOfWalk;
+        }
+}
 
 

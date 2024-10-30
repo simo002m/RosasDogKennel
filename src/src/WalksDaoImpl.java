@@ -19,12 +19,13 @@ public class WalksDaoImpl implements WalksDao {
 
     public void createWalks(Walks walks) throws Exception {
 
-        String sql = "INSERT INTO tblWalks VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tblWalks VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, walks.getFldWalksId());
-        pstmt.setString(2, walks.getFldWalksName());
-        pstmt.setString(3, walks.getFldWalksBreed());
+        pstmt.setInt(1, walks.getFldWalksID());
+        pstmt.setString(2, walks.getFldStartWalkTime());
+        pstmt.setInt(3, walks.getFldTimeWalked());
+        pstmt.setInt(4, walks.getFldKMwalked());
         int affectedRows = pstmt.executeUpdate();
         if (affectedRows > 0) {
             System.out.println("Walks added successfully.");
@@ -34,20 +35,20 @@ public class WalksDaoImpl implements WalksDao {
     }
 
     @Override
-    public void readWalks(int WalksId) throws Exception{
-        String sql = "SELECT * FROM tblWalks WHERE fldWalksId  = ?";
+    public void readWalks(int WalksID) throws Exception{
+        String sql = "SELECT * FROM tblWalks WHERE fldWalksID  = ?";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, WalksId);
+        pstmt.setInt(1, WalksID);
         ResultSet rs = pstmt.executeQuery();
         if (rs.next()) {
             Walks walks = new Walks();
-            walks.setFldWalksId(rs.getInt(1));
-            walks.setFldWalksI(rs.getString(2));
-            walks.setFldWalksBreed(rs.getString(3));
-            System.out.println(walks.getFldWalksId() + " "+ walks.getFldWalksName()+ " "+ walks.getFldWalksBreed());
+            walks.setFldWalksID(rs.getInt(1));
+            walks.setFldStartWalkTime(rs.getString(2));
+            walks.setFldTimeWalked(rs.getInt(3));
+            System.out.println(walks.getFldWalksID() + " "+ walks.getFldStartWalkTime()+ " "+ walks.getFldTimeWalked());
         } else {
-            System.out.println("No Walks found with ID: " + WalksId);
+            System.out.println("No Walks found with ID: " + WalksID);
         }
     }
 
@@ -61,10 +62,10 @@ public class WalksDaoImpl implements WalksDao {
         while (rs.next()) {
             hasWalks = true;
             Walks walks = new Walks();
-            walks.setFldWalksId(rs.getInt(1));
-            walks.setFldWalksName(rs.getString(2));
-            walks.setFldWalksBreed(rs.getString(3));
-            System.out.println(walks.getFldWalksId()+" "+ walks.getFldWalksName()+walks.getFldWalksBreed());
+            walks.setFldWalksID(rs.getInt(1));
+            walks.setFldStartWalkTime(rs.getString(2));
+            walks.setFldTimeWalked(rs.getInt(3));
+            System.out.println(walks.getFldWalksID()+" "+ walks.getFldStartWalkTime()+walks.getFldTimeWalked()+" "+ walks.getFldTimeWalked()+" "+ walks.getFldKMwalked()+" "+ walks.getFldDogID() +" "+ walks.getFldDateOfWalk());
         }
         if (!hasWalks) {
             System.out.println("No walks found.");
