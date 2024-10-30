@@ -22,17 +22,17 @@ public class Main {
     public static void main(String args[]) throws Exception {
         System.out.println("start");
 
-        //Connection conn = getConnection();
+        Connection conn = getConnection();
 
 
-        //DepartmentDao dao = new DepartmentDaoImpl();
+        DogDao dao = new DogDaoImpl();
 
         //dao.readDepartment("d1");
 
         //Department d = new Department("d4","fishing","New York");
         //dao.createDog(d);
 
-        DogDao.readAllDogs();
+        dao.readAllDogs();
 
 
 
