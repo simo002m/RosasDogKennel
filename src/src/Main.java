@@ -25,16 +25,16 @@ public class Main {
         //Connection conn = getConnection();
 
 
-        DepartmentDao dao = new DepartmentDaoImpl();
+        //DepartmentDao dao = new DepartmentDaoImpl();
 
         //dao.readDepartment("d1");
 
-        Department d = new Department("d4","fishing","New York");
-        dao.createDog(d);
+        //Department d = new Department("d4","fishing","New York");
+        //dao.createDog(d);
 
-        dao.readAllDepartments();
+        DogDao.readAllDogs();
 
-         */
+        */
 
         System.out.println("slut");
     }
