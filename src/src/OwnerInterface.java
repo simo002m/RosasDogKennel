@@ -12,7 +12,6 @@ public class OwnerInterface {
         Connection conn = null;
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-        System.out.println("Connected to the database.");
         return conn;
     }
 
