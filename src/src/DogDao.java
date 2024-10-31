@@ -3,5 +3,3 @@ public interface DogDao {
         void readAllDogs() throws Exception;
         void createdog(Dog dog) throws Exception;
     }
-
-
