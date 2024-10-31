@@ -1,8 +1,6 @@
 import java.util.Scanner;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.util.Scanner;
-
 
 public class Main {
 
@@ -23,47 +21,88 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Velkommen til Rosas Hundepension");
 
+
         // Variables
-        int userChoice;
+        int userChoiceDog;
+        int userChoiceFirstMenu;
         Scanner input = new Scanner(System.in);
 
         // Ask the User what they want to do
         do {
-            System.out.println("For at tilføje en hund tryk 1");
-            System.out.println("For at få information omkring en hund tryk 2");
-            System.out.println("For at se alle information om alle Hunde tryk 3");
-            System.out.println("For at lukke programmet tryk 0");
+            System.out.println("1: Tilgå Hund");
+            System.out.println("2: Tilgå Ejer");
+            System.out.println("3: tilgå Gåtur");
+            System.out.println("0: Afslut");
 
             while (!input.hasNextInt()) {
                 System.out.println("Ugyldigt input. Indtast det tal som henviser til den funktion du gerne vil bruge");
-                input.next(); // Blocks invalid input and waits for new input
+                input.next(); //Blocks invalid input and waits for new input
             }
 
-            userChoice = input.nextInt();
 
-            switch (userChoice) {
+            userChoiceFirstMenu = input.nextInt();
+
+
+            switch (userChoiceFirstMenu) {
                 case 1:
-                    Dog.userInterfaceCreateDog();
+                    do {
+                        System.out.println("For at tilføje en hund tryk 1");
+                        System.out.println("For at få information omkring en hund tryk 2");
+                        System.out.println("For at se alle information om alle Hunde tryk 3");
+                        System.out.println("For at lukke programmet tryk 0");
+
+                        while (!input.hasNextInt()) {
+                            System.out.println("Ugyldigt input. Indtast det tal som henviser til den funktion du gerne vil bruge");
+                            input.next(); // Blocks invalid input and waits for new input
+                        }
+
+                        userChoiceDog = input.nextInt();
+
+                        switch (userChoiceDog) {
+                            case 1:
+                                Dog.userInterfaceCreateDog();
+                                break;
+
+                            case 2:
+                                Dog.userInterfaceReadDog();
+                                break;
+
+                            case 3:
+                                Dog.userInterfaceReadAllDogs();
+                                break;
+
+                            case 0:
+                                System.out.println("Lukker programmet");
+                                break;
+
+                            default:
+                                System.out.println("Ugyldigt input.");
+                                break;
+                        }
+                    } while (userChoiceDog != 0);
                     break;
 
+
                 case 2:
-                    Dog.userInterfaceReadDog();
                     break;
 
                 case 3:
-                    Dog.userInterfaceReadAllDogs();
                     break;
 
                 case 0:
-                    System.out.println("Lukker programmet");
+                    System.out.println("Lukker programmet.");
                     break;
 
                 default:
-                    System.out.println("Ugyldigt input.");
                     break;
+
             }
-        } while (userChoice != 0);
+
+        } while (userChoiceFirstMenu != 0);
+
     }
+
+
 }
 
 
