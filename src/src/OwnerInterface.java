@@ -24,7 +24,7 @@ public class OwnerInterface {
         // declare variable for later user
         int actionChoice;
 
-        System.out.println("Velkommen til ejer databasen!\n\nHer er dine valgmuligheder:");
+        System.out.println("Velkommen til ejer oversigten!\n\nHer er dine valgmuligheder:");
 
         do {
             // Menu
