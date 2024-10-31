@@ -86,8 +86,8 @@ public class Owner {
         System.out.print("Indtast navn: ");
         String ownerName = choice.nextLine();
 
-        System.out.print("Indtast fødselsdag: ");
-        String ownerBirthday = choice.nextLine();
+        System.out.print("Indtast fødselsdato: ");
+        String ownerBirthDate = choice.nextLine();
 
         System.out.print("indtast email: ");
         String ownerEmail = choice.nextLine();
@@ -98,7 +98,7 @@ public class Owner {
         System.out.print("Indtast ejer post nr: ");
         String ownerZipcode = choice.nextLine();
 
-        dao.createOwner(new Owner(ownerID, ownerName, ownerBirthday, ownerEmail, ownerPhoneNr, ownerZipcode));
+        dao.createOwner(new Owner(ownerID, ownerName, ownerBirthDate, ownerEmail, ownerPhoneNr, ownerZipcode));
     }
 
 }
