@@ -165,7 +165,7 @@ public class Dog {
     //Method to Read all Dogs
     public static void userInterfaceReadAllDogs() {
         try {
-            System.out.println("Viser alle hunde...");
+            System.out.println("Viser alle hunde");
             DogDao dao2 = new DogDaoImpl();
             dao2.readAllDogs();
         } catch (Exception e) {

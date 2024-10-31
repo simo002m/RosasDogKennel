@@ -68,12 +68,13 @@ public class DogDaoImpl implements DogDao {
             dog.setFldRecAmountInGram(rs.getInt(15));
 
 
-            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName().trim() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() +
-                    " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() +
-                    " " + dog.getFldVaccinated() + " " + dog.getFldFleeTreatment() + " " + dog.getFldInsured() + " " + dog.getFldPrefferedVet() + " " + dog.getFldFoodType() +
-                    " " + dog.getFldRecAmountInGram());
+            System.out.println("Ejer ID: "+ dog.getFldOwnerID() + "\t\tHunde ID: " + dog.getFldDogId() + "\t\tHunde Navn: " + dog.getFldDogName().trim() + " \nFødselsår: " +
+                    dog.getFldYearBorn() + "\t\tHundens vægt: " + dog.getFldWeight() + "\t\tHundens race: " + dog.getFldDogBreed().trim() + " \nHundens specielle behov: " + dog.getFldSpecialNeeds().trim()
+                    + "\t\tHundens ankomst dato: " + dog.getFldDateArrived().trim() + "\t\tHundens forventede opholdstid: " + dog.getFldExpectedStayDays() + " Dage "+  "\nEr hunden vacineret: " + dog.getFldVaccinated().trim()
+                    + "\t\tEr hunden loppebehandlet:" + dog.getFldFleeTreatment().trim() + "\t\tEr hunden forsikret: " + dog.getFldInsured().trim() + " \nHvilken dyrelæge skal der ringes hvis hunden blive syg: " + dog.getFldPrefferedVet().trim()
+                    + "\t\tFodertype: " + dog.getFldFoodType().trim() + "\t\tGram foder: " + dog.getFldRecAmountInGram()+ "\n\n");
         } else {
-            System.out.println("No Dog found with ID: " + DogId);
+            System.out.println("Ingen hund fundet med det ID: " + DogId);
         }
     }
 
@@ -103,10 +104,14 @@ public class DogDaoImpl implements DogDao {
             dog.setFldFoodType(rs.getString(14));
             dog.setFldRecAmountInGram(rs.getInt(15));
 
-            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() + " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() + " " + dog.getFldVaccinated() + " " + dog.getFldFleeTreatment() + " " + dog.getFldInsured() + " " + dog.getFldPrefferedVet() + " " + dog.getFldFoodType() + " " + dog.getFldRecAmountInGram());
+            System.out.println("Ejer ID: "+ dog.getFldOwnerID() + "\t\tHunde ID: " + dog.getFldDogId() + "\t\tHunde Navn: " + dog.getFldDogName().trim() + " \nFødselsår: " +
+                    dog.getFldYearBorn() + "\t\tHundens vægt: " + dog.getFldWeight() + "\t\tHundens race: " + dog.getFldDogBreed().trim() + " \nHundens specielle behov: " + dog.getFldSpecialNeeds().trim()
+                    + "\t\tHundens ankomst dato: " + dog.getFldDateArrived().trim() + "\t\tHundens forventede opholdstid:  " + dog.getFldExpectedStayDays() +" Dage "+ " \nEr hunden vacineret: " + dog.getFldVaccinated().trim()
+                    + "\t\tEr hunden loppebehandlet:" + dog.getFldFleeTreatment().trim() + "\t\tEr hunden forsikret: " + dog.getFldInsured().trim() + " \nHvilken dyrelæge skal der ringes hvis hunden blive syg: " + dog.getFldPrefferedVet().trim()
+                    + "\t\tFodertype: " + dog.getFldFoodType().trim() + "\t\tGram foder: " + dog.getFldRecAmountInGram()+ "\n\n");
         }
         if (!hasDogs) {
-            System.out.println("No dogs found.");
+            System.out.println("Ingen hunde fundet.");
         }
     }
 }
