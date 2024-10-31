@@ -23,7 +23,6 @@ public class Main {
 
 
         // Variables
-        int userChoiceDog;
         int userChoiceFirstMenu;
         Scanner input = new Scanner(System.in);
 
@@ -45,41 +44,7 @@ public class Main {
 
             switch (userChoiceFirstMenu) {
                 case 1:
-                    do {
-                        System.out.println("For at tilføje en hund tryk 1");
-                        System.out.println("For at få information omkring en hund tryk 2");
-                        System.out.println("For at se alle information om alle Hunde tryk 3");
-                        System.out.println("For at lukke programmet tryk 0");
-
-                        while (!input.hasNextInt()) {
-                            System.out.println("Ugyldigt input. Indtast det tal som henviser til den funktion du gerne vil bruge");
-                            input.next(); // Blocks invalid input and waits for new input
-                        }
-
-                        userChoiceDog = input.nextInt();
-
-                        switch (userChoiceDog) {
-                            case 1:
-                                Dog.userInterfaceCreateDog();
-                                break;
-
-                            case 2:
-                                Dog.userInterfaceReadDog();
-                                break;
-
-                            case 3:
-                                Dog.userInterfaceReadAllDogs();
-                                break;
-
-                            case 0:
-                                System.out.println("Lukker programmet");
-                                break;
-
-                            default:
-                                System.out.println("Ugyldigt input.");
-                                break;
-                        }
-                    } while (userChoiceDog != 0);
+                    DogInterface.dogInterface();
                     break;
 
 
