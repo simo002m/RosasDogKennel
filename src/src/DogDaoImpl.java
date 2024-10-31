@@ -68,7 +68,7 @@ public class DogDaoImpl implements DogDao {
             dog.setFldRecAmountInGram(rs.getInt(15));
 
 
-            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() +
+            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName().trim() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() +
                     " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() +
                     " " + dog.getFldVaccinated() + " " + dog.getFldFleeTreatment() + " " + dog.getFldInsured() + " " + dog.getFldPrefferedVet() + " " + dog.getFldFoodType() +
                     " " + dog.getFldRecAmountInGram());

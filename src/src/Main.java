@@ -43,18 +43,15 @@ public class Main {
 
             switch (userChoice) {
                 case 1:
-                    userInterfaceCreateDog();
+                    Dog.userInterfaceCreateDog();
                     break;
 
                 case 2:
-                    System.out.println("Indtast Hundens Id");
-                    int id = input.nextInt();
-                    DogDao dao = new DogDaoImpl();
-                    dao.readDog(id);
+                    Dog.userInterfaceReadDog();
                     break;
 
                 case 3:
-                    userInterfaceReadAllDogs();
+                    Dog.userInterfaceReadAllDogs();
                     break;
 
                 case 0:
@@ -66,19 +63,8 @@ public class Main {
                     break;
             }
         } while (userChoice != 0);
-
-        input.close(); // Close the scanner to avoid resource leak
-    }
-
-    // Method to add a new dog
-    public static void userInterfaceCreateDog() {
-        System.out.println("Tilføjer en ny hund...");
-        // Implement logic for creating a dog here
-    }
-
-    // Method to read all dogs' information
-    public static void userInterfaceReadAllDogs() {
-        System.out.println("Viser alle hunde...");
-
     }
 }
+
+
+
