@@ -36,6 +36,14 @@ public class Main {
 
 
         */
+        WalksDao dao = new WalksDaoImpl();
+
+       // Walks walk1 = new Walks(3, "10:00", 80, 3,1 ,"15-07-2023");
+        //dao.createWalks(walk1);
+
+        dao.readAllWalks();
+
+
         System.out.println("slut");
     }
 }

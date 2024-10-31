@@ -6,9 +6,9 @@ public class Walks {
         private int fldTimeWalked; // Time of the walk
         private int fldKMwalked;// Distance of the walk
         private int fldDogID; //Identifier for Dog
-        private Date fldDateOfWalk; // Date of walk
+        private String fldDateOfWalk; // Date of walk
 
-        public Walks(int WalksID, String StartWalkTime, int fldTimeWalked,int fldKMwalked,int fldDogID, Date fldDateOfWalk) {
+        public Walks(int WalksID, String StartWalkTime, int fldTimeWalked,int fldKMwalked,int fldDogID, String fldDateOfWalk) {
             this.fldWalksID = fldWalksID;
             this.fldStartWalkTime = fldStartWalkTime;
             this.fldTimeWalked = fldTimeWalked;
@@ -47,13 +47,23 @@ public class Walks {
         public int getFldKMwalked() {
             return fldKMwalked;
         }
+         public void setFldKMwalked(int fldKMwalked) {
+            this.fldKMwalked = fldKMwalked;
+        }
 
         public int getFldDogID() {
             return fldDogID;
         }
+         public void setFldDogID(int fldDogID) {
+            this.fldDogID = fldDogID;
+       }
 
-        public Date getFldDateOfWalk() {
+        public String getFldDateOfWalk() {
             return fldDateOfWalk;
+        }
+
+        public void setFldDateOfWalk(String fldDateOfWalk) {
+            this.fldDateOfWalk = fldDateOfWalk;
         }
 }
 
