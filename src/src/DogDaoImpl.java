@@ -15,8 +15,7 @@ public class DogDaoImpl implements DogDao {
     }
 
     public void createdog(Dog dog) throws Exception {
-        String sql = "INSERT INTO tblDog (fldOwnerId, fldDogId, fldDogName, fldYearBorn, fldWheight, fldBreed, fldSpecialNeeds, fldDateArrived, " +
-                "fldExpectedStayDays, fldVaccinated, fldFleaTreatment, fldInsured, fldPreferedVet, fldFoodtype, fldRecAmountInGram) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO tblDog VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, dog.getFldOwnerID());
@@ -26,7 +25,7 @@ public class DogDaoImpl implements DogDao {
         pstmt.setDouble(5, dog.getFldWeight());
         pstmt.setString(6, dog.getFldDogBreed());
         pstmt.setString(7, dog.getFldSpecialNeeds());
-        pstmt.setDate(8, dog.getFldDateArrived());
+        pstmt.setString(8, dog.getFldDateArrived());
         pstmt.setInt(9, dog.getFldExpectedStayDays());
         pstmt.setString(10, dog.getFldVaccinated());
         pstmt.setString(11, dog.getFldFleeTreatment());
@@ -45,29 +44,29 @@ public class DogDaoImpl implements DogDao {
 
     @Override
     public void readDog(int DogId) throws Exception {
-        String sql = "SELECT * FROM tblDog (fldOwnerId, fldDogId, fldDogName, fldYearBorn, fldWheight, fldBreed, fldSpecialNeeds, fldDateArrived, " +
-                "fldExpectedStayDays, fldVaccinated, fldFleaTreatment, fldInsured, fldPreferedVet, fldFoodtype, fldRecAmountInGram) WHERE fldDogId  = ?";
+        String sql = "SELECT * FROM tblDog  WHERE fldDogId  = ?";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, DogId);
         ResultSet rs = pstmt.executeQuery();
         if (rs.next()) {
             Dog dog = new Dog();
-            dog.setFldDogId(rs.getInt(1));
-            dog.setFldDogName(rs.getString(2));
-            dog.setFldDogBreed(rs.getString(3));
-            dog.setFldDogName(rs.getString(4));
-            dog.setFldYearBorn(rs.getInt(5));
-            dog.setFldWeight(rs.getDouble(6));
-            dog.setFldDogBreed(rs.getString(7));
-            dog.setFldDogName(rs.getString(8));
-            dog.setFldYearBorn(rs.getInt(9));
-            dog.setFldWeight(rs.getDouble(10));
-            dog.setFldDogBreed(rs.getString(11));
-            dog.setFldDogName(rs.getString(12));
-            dog.setFldYearBorn(rs.getInt(13));
-            dog.setFldWeight(rs.getDouble(14));
-            dog.setFldDogBreed(rs.getString(15));
+            dog.setFldOwnerID(rs.getInt(1));
+            dog.setFldDogId(rs.getInt(2));
+            dog.setFldDogName(rs.getString(3));
+            dog.setFldYearBorn(rs.getInt(4));
+            dog.setFldWeight(rs.getDouble(5));
+            dog.setFldDogBreed(rs.getString(6));
+            dog.setFldSpecialNeeds(rs.getString(7));
+            dog.setFldDateArrived(rs.getString(8));
+            dog.setFldExpectedStayDays(rs.getInt(9));
+            dog.setFldVaccinated(rs.getString(10));
+            dog.setFldFleeTreatment(rs.getString(11));
+            dog.setFldInsured(rs.getString(12));
+            dog.setFldPrefferedVet(rs.getString(13));
+            dog.setFldFoodType(rs.getString(14));
+            dog.setFldRecAmountInGram(rs.getInt(15));
+
 
             System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() +
                     " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() +
@@ -80,8 +79,7 @@ public class DogDaoImpl implements DogDao {
 
     @Override
     public void readAllDogs() throws Exception {
-        String sql = "SELECT * FROM tblDog (fldOwnerId, fldDogId, fldDogName, fldYearBorn, fldWheight, fldBreed, fldSpecialNeeds, fldDateArrived, " +
-                "fldExpectedStayDays, fldVaccinated, fldFleaTreatment, fldInsured, fldPreferedVet, fldFoodtype, fldRecAmountInGram)";
+        String sql = "SELECT * FROM tblDog";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
@@ -89,26 +87,23 @@ public class DogDaoImpl implements DogDao {
         while (rs.next()) {
             hasDogs = true;
             Dog dog = new Dog();
-            dog.setFldDogId(rs.getInt(1));
-            dog.setFldDogName(rs.getString(2));
-            dog.setFldDogBreed(rs.getString(3));
-            dog.setFldDogName(rs.getString(4));
-            dog.setFldYearBorn(rs.getInt(5));
-            dog.setFldWeight(rs.getDouble(6));
-            dog.setFldDogBreed(rs.getString(7));
-            dog.setFldDogName(rs.getString(8));
-            dog.setFldYearBorn(rs.getInt(9));
-            dog.setFldWeight(rs.getDouble(10));
-            dog.setFldDogBreed(rs.getString(11));
-            dog.setFldDogName(rs.getString(12));
-            dog.setFldYearBorn(rs.getInt(13));
-            dog.setFldWeight(rs.getDouble(14));
-            dog.setFldDogBreed(rs.getString(15));
+            dog.setFldOwnerID(rs.getInt(1));
+            dog.setFldDogId(rs.getInt(2));
+            dog.setFldDogName(rs.getString(3));
+            dog.setFldYearBorn(rs.getInt(4));
+            dog.setFldWeight(rs.getDouble(5));
+            dog.setFldDogBreed(rs.getString(6));
+            dog.setFldSpecialNeeds(rs.getString(7));
+            dog.setFldDateArrived(rs.getString(8));
+            dog.setFldExpectedStayDays(rs.getInt(9));
+            dog.setFldVaccinated(rs.getString(10));
+            dog.setFldFleeTreatment(rs.getString(11));
+            dog.setFldInsured(rs.getString(12));
+            dog.setFldPrefferedVet(rs.getString(13));
+            dog.setFldFoodType(rs.getString(14));
+            dog.setFldRecAmountInGram(rs.getInt(15));
 
-            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() +
-                    " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() +
-                    " " + dog.getFldVaccinated() + " " + dog.getFldFleeTreatment() + " " + dog.getFldInsured() + " " + dog.getFldPrefferedVet() + " " + dog.getFldFoodType() +
-                    " " + dog.getFldRecAmountInGram());
+            System.out.println(dog.getFldOwnerID() + " " + dog.getFldDogId() + " " + dog.getFldDogName() + " " + dog.getFldYearBorn() + " " + dog.getFldWeight() + " " + dog.getFldDogBreed() + " " + dog.getFldSpecialNeeds() + " " + dog.getFldDateArrived() + " " + dog.getFldExpectedStayDays() + " " + dog.getFldVaccinated() + " " + dog.getFldFleeTreatment() + " " + dog.getFldInsured() + " " + dog.getFldPrefferedVet() + " " + dog.getFldFoodType() + " " + dog.getFldRecAmountInGram());
         }
         if (!hasDogs) {
             System.out.println("No dogs found.");
