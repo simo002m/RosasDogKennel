@@ -179,9 +179,10 @@ public class Dog {
                 System.out.println("Indtast Hundens Id");
                 Scanner sc = new Scanner(System.in);
                 int id = sc.nextInt();
+                sc.nextLine();
                 DogDao dao = new DogDaoImpl();
                 dao.readDog(id);
-                sc.close();
+
             }catch (Exception f) {
                 throw new RuntimeException(f);
             }
