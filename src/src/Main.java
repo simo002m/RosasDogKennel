@@ -26,7 +26,7 @@ public class Main {
         int userChoiceFirstMenu;
         Scanner input = new Scanner(System.in);
 
-        // Ask the User what they want to do
+        // Ask the user which menu they want to go to
         do {
             System.out.println("1: Tilgå Hund");
             System.out.println("2: Tilgå Ejer");
@@ -41,12 +41,11 @@ public class Main {
 
             userChoiceFirstMenu = input.nextInt();
 
-
+            //directing the user to the menu they wanted to go to
             switch (userChoiceFirstMenu) {
                 case 1:
                     DogInterface.dogInterface();
                     break;
-
 
                 case 2:
                     break;
@@ -63,7 +62,7 @@ public class Main {
 
             }
 
-        } while (userChoiceFirstMenu != 0);
+        } while (userChoiceFirstMenu != 0);//if the user types 0 than the program shuts down
 
     }
 

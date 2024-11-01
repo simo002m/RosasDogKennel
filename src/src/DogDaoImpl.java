@@ -14,7 +14,9 @@ public class DogDaoImpl implements DogDao {
         return conn;
     }
 
-    public void createdog(Dog dog) throws Exception {
+
+    //method to create a dog in the Database
+    public void createDog(Dog dog) throws Exception {
         String sql = "INSERT INTO tblDog VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -41,7 +43,7 @@ public class DogDaoImpl implements DogDao {
             System.out.println("Failed to add the dog.");
         }
     }
-
+    //method to read a dog in the Database
     @Override
     public void readDog(int DogId) throws Exception {
         String sql = "SELECT * FROM tblDog  WHERE fldDogId  = ?";
@@ -77,7 +79,7 @@ public class DogDaoImpl implements DogDao {
             System.out.println("Ingen hund fundet med det ID: " + DogId);
         }
     }
-
+    //method to read all dogs in the Database
     @Override
     public void readAllDogs() throws Exception {
         String sql = "SELECT * FROM tblDog";
