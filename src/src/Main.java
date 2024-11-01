@@ -51,6 +51,7 @@ public class Main {
                     break;
 
                 case 3:
+                    WalksInterface.walksInterfaceMain();
                     break;
 
                 case 0:
