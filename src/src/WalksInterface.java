@@ -55,7 +55,6 @@ public class WalksInterface {
             }
         } while (userChoice != 0);
 
-        input.close(); // Close the scanner to avoid resource leak
     }
 
 

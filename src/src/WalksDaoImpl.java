@@ -26,7 +26,7 @@ public class WalksDaoImpl implements WalksDao {
         pstmt.setString(2, walks.getFldStartWalkTime());
         pstmt.setInt(3, walks.getFldTimeWalked());
         pstmt.setInt(4, walks.getFldKMwalked());
-        pstmt.setInt(5, walks.getFldDogID());
+        pstmt.setInt(5, walks.getFldDogId());
         pstmt.setString(6, walks.getFldDateOfWalk());
         int affectedRows = pstmt.executeUpdate();
         if (affectedRows > 0) {
@@ -58,7 +58,7 @@ public class WalksDaoImpl implements WalksDao {
             walks.setFldDateOfWalk(rs.getString(6));
 
 
-            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogID(), walks.getFldDateOfWalk().trim());
+            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogId(), walks.getFldDateOfWalk().trim());
         } else {
             System.out.println("No Walks found with ID: " + WalksID);
         }
@@ -86,7 +86,7 @@ public class WalksDaoImpl implements WalksDao {
             walks.setFldDogID(rs.getInt(5));
             walks.setFldDateOfWalk(rs.getString(6));
 
-            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogID(), walks.getFldDateOfWalk().trim());
+            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogId(), walks.getFldDateOfWalk().trim());
         }
         if (!hasWalks) {
             System.out.println("No walks found.");

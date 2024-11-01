@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.Scanner;
 
 public class Walks {
@@ -52,7 +51,7 @@ public class Walks {
             this.fldKMwalked = fldKMwalked;
         }
 
-        public int getFldDogID() {
+        public int getFldDogId() {
             return fldDogID;
         }
          public void setFldDogID(int fldDogID) {
