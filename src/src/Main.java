@@ -30,7 +30,7 @@ public class Main {
         do {
             System.out.println("1: Tilgå Hund");
             System.out.println("2: Tilgå Ejer");
-            System.out.println("3: tilgå Gåtur");
+            System.out.println("3: Tilgå Gåtur");
             System.out.println("0: Afslut");
 
             while (!input.hasNextInt()) {
