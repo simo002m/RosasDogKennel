@@ -38,9 +38,9 @@ public class DogDaoImpl implements DogDao {
 
         int affectedRows = pstmt.executeUpdate();
         if (affectedRows > 0) {
-            System.out.println("Dog added successfully.");
+            System.out.println("Hunden er tilføjet.");
         } else {
-            System.out.println("Failed to add the dog.");
+            System.out.println("Fejl.");
         }
     }
     //method to read a dog in the Database
