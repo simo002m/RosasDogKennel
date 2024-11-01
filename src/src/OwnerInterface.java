@@ -27,7 +27,7 @@ public class OwnerInterface {
 
         do {
             // Menu
-            System.out.println("\n1. Udskriv alle ejere\n2. Udskriv specifik ejer\n3. Lav ny ejer");
+            System.out.println("\n1. Udskriv alle ejere\n2. Udskriv specifik ejer\n3. Lav ny ejer\n0. Gå tilbage til hovedmenu");
 
             // Check if other datatype than int has been typed into Scanner object choice
             while (!choice.hasNextInt()) {
@@ -48,6 +48,9 @@ public class OwnerInterface {
                     break;
                 case 3:
                     Owner.interfaceCreateOwner();
+                    break;
+                case 0:
+                    System.out.println("Går tilbage til hovedmenu");
                     break;
                 default:
                     break;
