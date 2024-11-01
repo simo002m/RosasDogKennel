@@ -43,6 +43,11 @@ public class WalksDaoImpl implements WalksDao {
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, WalksID);
         ResultSet rs = pstmt.executeQuery();
+
+        System.out.println("+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(23) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+");
+        System.out.println("Gåtur ID\t|\tTidspunkt\t|\tLængde (minutter)\t|\tKM Gået\t|\tHund ID\t|\tDato\t|");
+        System.out.println("+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(23) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+");
+
         if (rs.next()) {
             Walks walks = new Walks();
             walks.setFldWalksID(rs.getInt(1));
@@ -53,7 +58,7 @@ public class WalksDaoImpl implements WalksDao {
             walks.setFldDateOfWalk(rs.getString(6));
 
 
-            System.out.println(walks.getFldWalksID() + " "+ walks.getFldStartWalkTime()+ " "+ walks.getFldTimeWalked());
+            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogID(), walks.getFldDateOfWalk().trim());
         } else {
             System.out.println("No Walks found with ID: " + WalksID);
         }
@@ -66,6 +71,11 @@ public class WalksDaoImpl implements WalksDao {
         PreparedStatement pstmt = conn.prepareStatement(sql);
         ResultSet rs = pstmt.executeQuery();
         boolean hasWalks = false;
+
+        System.out.println("+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(23) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+");
+        System.out.println("Gåtur ID\t|\tTidspunkt\t|\tLængde (minutter)\t|\tKM Gået\t|\tHund ID\t|\tDato\t|");
+        System.out.println("+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(23) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+" + "-".repeat(11) + "+");
+
         while (rs.next()) {
             hasWalks = true;
             Walks walks = new Walks();
@@ -76,8 +86,7 @@ public class WalksDaoImpl implements WalksDao {
             walks.setFldDogID(rs.getInt(5));
             walks.setFldDateOfWalk(rs.getString(6));
 
-
-            System.out.println(walks.getFldWalksID()+" "+ walks.getFldStartWalkTime()+walks.getFldTimeWalked()+" "+ walks.getFldTimeWalked()+" "+ walks.getFldKMwalked()+" "+ walks.getFldDogID() +" "+ walks.getFldDateOfWalk());
+            System.out.printf("%d %20s %20d %15d %10d %17s\n", walks.getFldWalksID(), walks.getFldStartWalkTime().trim(), walks.getFldTimeWalked(), walks.getFldKMwalked(), walks.getFldDogID(), walks.getFldDateOfWalk().trim());
         }
         if (!hasWalks) {
             System.out.println("No walks found.");

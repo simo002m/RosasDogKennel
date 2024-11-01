@@ -9,7 +9,7 @@ public class Walks {
         private int fldDogID; //Identifier for Dog
         private String fldDateOfWalk; // Date of walk
 
-        public Walks(int WalksID, String StartWalkTime, int fldTimeWalked,int fldKMwalked,int fldDogID, String fldDateOfWalk) {
+        public Walks(int fldWalksID, String fldStartWalkTime, int fldTimeWalked,int fldKMwalked,int fldDogID, String fldDateOfWalk) {
             this.fldWalksID = fldWalksID;
             this.fldStartWalkTime = fldStartWalkTime;
             this.fldTimeWalked = fldTimeWalked;
@@ -66,70 +66,68 @@ public class Walks {
         public void setFldDateOfWalk(String fldDateOfWalk) {
             this.fldDateOfWalk = fldDateOfWalk;
         }
-    //Method to Read all Walks
-    public static void userInterfaceReadAllWalks() {
-        try {
-            System.out.println("Viser alle Walks...");
-            WalksDao dao2 = new WalksDaoImpl();
-            dao2.readAllWalks();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    //Method to Read walk information
-    public static void userInterfaceReadWalk() {
-        try {
-            System.out.println("Indtast Walk Id");
-            Scanner sc = new Scanner(System.in);
-            int id = sc.nextInt();
-            sc.nextLine();
-            WalksDao dao = new WalksDaoImpl();
-            dao.readWalks(id);
-
-        }catch (Exception f) {
-            throw new RuntimeException(f);
+        //Method to Read all Walks
+        public static void userInterfaceReadAllWalks() {
+            try {
+                System.out.println("Viser alle gåture...");
+                WalksDao dao2 = new WalksDaoImpl();
+                dao2.readAllWalks();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
-    }
-    public static void userInterfaceCreateWalk() {
-        try {
-            Scanner input = new Scanner(System.in);
-            System.out.println("Laver en ny walk");
-            System.out.println("Skriv start tiden på gårtur");
-            int fldwalksID = input.nextInt();
-            input.nextLine();
+        //Method to Read walk information
+        public static void userInterfaceReadWalk() {
+            try {
+                System.out.println("Indtast gåtur Id");
+                Scanner sc = new Scanner(System.in);
+                int id = sc.nextInt();
+                sc.nextLine();
+                WalksDao dao = new WalksDaoImpl();
+                dao.readWalks(id);
 
-            System.out.println("Skriv Start tidspunkt");
-            String fldStartWalkTime = input.nextLine();
-            input.nextLine();
+            }catch (Exception f) {
+                throw new RuntimeException(f);
+            }
 
-            System.out.println("Skriv hvor lang tid gåturen varede");
-            int fldTimeWalked = input.nextInt();
-            input.nextLine();
-
-            System.out.println("Skriv hvor mange KM");
-            int fldKMwalked = input.nextInt();
-
-            System.out.println("Skriv hundens ID");
-            int fldDogID = input.nextInt();
-            input.nextLine();
-
-            System.out.println("skriv hvilken dato turen blev gået");
-            String fldDateOfWalk = input.nextLine();
-            input.nextLine();
-
-
-
-            WalksDao dao1 = new WalksDaoImpl();
-            Walks newWalk = new Walks(fldwalksID, fldStartWalkTime, fldTimeWalked, fldKMwalked, fldDogID,fldDateOfWalk);
-            dao1.createWalks(newWalk);
-
-
-        }catch (Exception g) {
-            throw new RuntimeException(g);
         }
-    }
+        public static void userInterfaceCreateWalk() {
+            try {
+                Scanner input = new Scanner(System.in);
+                System.out.println("Laver en ny gåtur");
+                System.out.println("Skriv gå tur ID");
+                int fldwalksID = input.nextInt();
+                input.nextLine();
+
+                System.out.println("Skriv start tidspunkt");
+                String fldStartWalkTime = input.nextLine();
+
+                System.out.println("Skriv hvor lang tid gåturen varede i minutter");
+                int fldTimeWalked = input.nextInt();
+                input.nextLine();
+
+                System.out.println("Skriv hvor mange KM");
+                int fldKMwalked = input.nextInt();
+                input.nextLine();
+
+                System.out.println("Skriv hundens ID");
+                int fldDogID = input.nextInt();
+                input.nextLine();
+
+                System.out.println("skriv hvilken dato turen blev gået");
+                String fldDateOfWalk = input.nextLine();
+
+
+
+                WalksDao dao1 = new WalksDaoImpl();
+                Walks newWalk = new Walks(fldwalksID, fldStartWalkTime, fldTimeWalked, fldKMwalked, fldDogID,fldDateOfWalk);
+                dao1.createWalks(newWalk);
+
+
+            }catch (Exception g) {
+                throw new RuntimeException(g);
+            }
+        }
 }
-
-
