@@ -20,7 +20,7 @@ public class OwnerDaoImpl implements OwnerDao {
         String sql = "INSERT INTO tblOwner VALUES (?, ?, ?, ?, ?, ?)";
         Connection conn = getConnection();
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, owner.getFldOwnerId()); // Insert each column into row via corresponding ?
+        pstmt.setInt(1, owner.getFldOwnerID()); // Insert each column into row via corresponding ?
         pstmt.setString(2, owner.getFldOwnerName());
         pstmt.setString(3, owner.getFldDateOfBirth());
         pstmt.setString(4, owner.getFldEmail());
@@ -53,7 +53,7 @@ public class OwnerDaoImpl implements OwnerDao {
             owner.setFldZipCode(rs.getString(6));
 
             //Print out all the rows
-            System.out.println(owner.getFldOwnerId() + " " + owner.getFldOwnerName().trim() + " " + owner.getFldDateOfBirth().trim() + " " + owner.getFldEmail().trim() + " " + owner.getFldPhoneNumber().trim() + " " + owner.getFldZipCode().trim());
+            System.out.println(owner.getFldOwnerID() + " " + owner.getFldOwnerName().trim() + " " + owner.getFldDateOfBirth().trim() + " " + owner.getFldEmail().trim() + " " + owner.getFldPhoneNumber().trim() + " " + owner.getFldZipCode().trim());
         } else {
             System.out.println("No owner found with ID: " + ownerID);
         }
@@ -83,7 +83,7 @@ public class OwnerDaoImpl implements OwnerDao {
             owner.setFldZipCode(rs.getString(6));
 
             //Print out all the rows
-            System.out.println(owner.getFldOwnerId() + "\t" + owner.getFldOwnerName().trim() + "  \t" + owner.getFldDateOfBirth().trim() + "  \t" + owner.getFldEmail().trim() + "     \t" + owner.getFldPhoneNumber().trim() + "  \t" + owner.getFldZipCode().trim());
+            System.out.println(owner.getFldOwnerID() + "\t" + owner.getFldOwnerName().trim() + "  \t" + owner.getFldDateOfBirth().trim() + "  \t" + owner.getFldEmail().trim() + "     \t" + owner.getFldPhoneNumber().trim() + "  \t" + owner.getFldZipCode().trim());
         }
         if (!hasOwners) {
             System.out.println("Ingen ejere fundet");
