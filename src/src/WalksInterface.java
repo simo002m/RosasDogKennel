@@ -1,13 +1,11 @@
-import java.util.Scanner;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Scanner;
 
-public class Main {
-
+public class WalksInterface {
     private static final String URL = "jdbc:sqlserver://localhost;portNumber=1433;databaseName=dbRosasDogKennel";
     private static final String USERNAME = "sa"; // replace with your username
     private static final String PASSWORD = "1234"; // replace with your password
-
 
     public static Connection getConnection() throws Exception {
         Connection conn = null;
@@ -17,58 +15,47 @@ public class Main {
         return conn;
     }
 
-
-    public static void main(String[] args) throws Exception {
+    public static void walksInterfaceMain() throws Exception {
         System.out.println("Velkommen til Rosas Hundepension");
 
-
         // Variables
-        int userChoiceFirstMenu;
+        int userChoice;
         Scanner input = new Scanner(System.in);
 
-        // Ask the user which menu they want to go to
+        // Ask the User what they want to do
         do {
-            System.out.println("1: Tilgå Hund");
-            System.out.println("2: Tilgå Ejer");
-            System.out.println("3: Tilgå Gåtur");
-            System.out.println("0: Afslut");
+            System.out.println("For at tilføje gåtur tryk 1");
+            System.out.println("For at få information omkring en gåtur tryk 2");
+            System.out.println("For at se alle information om alle gåture tryk 3");
+            System.out.println("For at lukke programmet tryk 0");
 
             while (!input.hasNextInt()) {
                 System.out.println("Ugyldigt input. Indtast det tal som henviser til den funktion du gerne vil bruge");
-                input.next(); //Blocks invalid input and waits for new input
+                input.next(); // Blocks invalid input and waits for new input
             }
 
+            userChoice = input.nextInt();
 
-            userChoiceFirstMenu = input.nextInt();
-
-            //directing the user to the menu they wanted to go to
-            switch (userChoiceFirstMenu) {
+            switch (userChoice) {
                 case 1:
-                    DogInterface.dogInterface();
+                    Walks.userInterfaceCreateWalk();
                     break;
-
                 case 2:
+                    Walks.userInterfaceReadWalk();
                     break;
-
                 case 3:
-                    WalksInterface.walksInterfaceMain();
+                    Walks.userInterfaceReadAllWalks();
                     break;
-
                 case 0:
-                    System.out.println("Lukker programmet.");
+                    System.out.println("Gå tilbage til hovedmenuen");
                     break;
-
                 default:
+                    System.out.println("Ugyldigt input.");
                     break;
-
             }
-
-        } while (userChoiceFirstMenu != 0);//if the user types 0 than the program shuts down
+        } while (userChoice != 0);
 
     }
 
 
 }
-
-
-

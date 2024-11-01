@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
+
 public class Dog {
+    //Attributes for Dog Class, describing the dogs properties
     private int fldDogId;       // Identifier for the dog
     private String fldDogName;  // Name of the Dog
     private String fldDogBreed; // Name of the Dog Breed
@@ -17,6 +19,8 @@ public class Dog {
     private String fldFoodType; //what kind of food should the dog get
     private int fldRecAmountInGram; //How much food should the dog get
 
+
+    //Getters and setters for all the properties
     public String getFldFoodType() {
         return fldFoodType;
     }
@@ -137,6 +141,7 @@ public class Dog {
         this.fldDogBreed = fldDogBreed;
     }
 
+    //Constructor to initialize a Dog Object with all attributes
     public Dog(int fldOwnerID, int fldDogId, String fldDogName, int fldYearBorn, double fldWeight,
                String fldDogBreed, String fldSpecialNeeds, String fldDateArrived, int fldExpectedStayDays,
                String fldVaccinated, String fldFleeTreatment, String fldInsured, String fldPrefferedVet, String fldFoodType, int fldRecAmountInGram) {
@@ -158,41 +163,42 @@ public class Dog {
 
 
     }
-
+    //empty constructor if attributes isn't known when made. (used in DogDaoImpl)
     public Dog() {
     }
 
     //Method to Read all Dogs
     public static void userInterfaceReadAllDogs() {
         try {
-            System.out.println("Viser alle hunde...");
-            DogDao dao2 = new DogDaoImpl();
-            dao2.readAllDogs();
+            System.out.println("Viser alle hunde");
+            DogDao dao2 = new DogDaoImpl();// makes a new DogDao implementation
+            dao2.readAllDogs();//method to read all dogs
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e);//handles the exceptions
         }
     }
 
         //Method to Read a dogs information
         public static void userInterfaceReadDog() {
             try {
-                System.out.println("Indtast Hundens Id");
+                System.out.println("Indtast hundens Id");//prompt
                 Scanner sc = new Scanner(System.in);
                 int id = sc.nextInt();
-                sc.nextLine();
+                sc.nextLine();//clears line break
                 DogDao dao = new DogDaoImpl();
                 dao.readDog(id);
 
             }catch (Exception f) {
-                throw new RuntimeException(f);
+                throw new RuntimeException(f);//handles the exceptions
             }
 
         }
-
+        //method to create a dog
         public static void userInterfaceCreateDog() {
         try {
             Scanner input = new Scanner(System.in);
             System.out.println("Laver en ny hund");
+            //asks the user for all necessary data
             System.out.println("Skriv ejerens Id");
             int fldOwnerID = input.nextInt();
             input.nextLine();
@@ -208,7 +214,7 @@ public class Dog {
             int fldYearBorn = input.nextInt();
             input.nextLine();
 
-            System.out.println("skriv hundens vægt i kg");
+            System.out.println("Skriv hundens vægt i kg");
             double fldWeight = input.nextDouble();
             input.nextLine();
 
@@ -245,14 +251,15 @@ public class Dog {
             int fldRecAmountInGram = input.nextInt();
             input.nextLine();
 
+            //Makes a Dog-object with the given data
             DogDao dao1 = new DogDaoImpl();
             Dog newDog = new Dog(fldOwnerID, fldDogId, fldDogName, fldYearBorn, fldWeight, fldDogBreed,
                     fldSpecialNeeds, fldDateArrived, fldExpectedStayDays, fldVaccinated, fldFleeTreatment,
                     fldInsured, fldPrefferedVet, fldFoodType, fldRecAmountInGram);
-            dao1.createdog(newDog);
+            dao1.createDog(newDog);//Saves the dog in the database
 
         }catch (Exception g) {
-            throw new RuntimeException(g);
+            throw new RuntimeException(g);//handles the exceptions
         }
     }
 }
