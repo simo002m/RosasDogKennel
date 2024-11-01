@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -18,6 +19,55 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
+        System.out.println("Velkommen til Rosas Hundepension");
+
+
+        // Variables
+        int userChoiceFirstMenu;
+        Scanner input = new Scanner(System.in);
+
+        // Ask the user which menu they want to go to
+        do {
+            System.out.println("1: Tilgå Hund");
+            System.out.println("2: Tilgå Ejer");
+            System.out.println("3: Tilgå Gåtur");
+            System.out.println("0: Afslut");
+
+            while (!input.hasNextInt()) {
+                System.out.println("Ugyldigt input. Indtast det tal som henviser til den funktion du gerne vil bruge");
+                input.next(); //Blocks invalid input and waits for new input
+            }
+
+
+            userChoiceFirstMenu = input.nextInt();
+
+            //directing the user to the menu they wanted to go to
+            switch (userChoiceFirstMenu) {
+                case 1:
+                    DogInterface.dogInterface();
+                    break;
+
+                case 2:
+                    break;
+
+                case 3:
+                    break;
+
+                case 0:
+                    System.out.println("Lukker programmet.");
+                    break;
+
+                default:
+                    break;
+
+            }
+
+        } while (userChoiceFirstMenu != 0);//if the user types 0 than the program shuts down
 
     }
+
+
 }
+
+
+
