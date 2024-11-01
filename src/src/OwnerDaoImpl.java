@@ -67,12 +67,10 @@ public class OwnerDaoImpl implements OwnerDao {
         ResultSet rs = pstmt.executeQuery();
         boolean hasOwners = false;
 
-
         // Nice formatting of table (display table, not SQl table) headers
         System.out.println("+" + "-".repeat(3) + "+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(27) + "+" + "-".repeat(11) + "+" + "-".repeat(14) + "+");
         System.out.println("ID\t|\tNavn\t|\tFødselsdato\t|\t\t\tEmail\t\t\t|\tTlf Nr\t|\tPost Nr    |");
         System.out.println("+" + "-".repeat(3) + "+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(27) + "+" + "-".repeat(11) + "+" + "-".repeat(14) + "+");
-
 
         while (rs.next()) {
             hasOwners = true;
@@ -88,7 +86,7 @@ public class OwnerDaoImpl implements OwnerDao {
             System.out.println(owner.getFldOwnerId() + "\t" + owner.getFldOwnerName().trim() + "  \t" + owner.getFldDateOfBirth().trim() + "  \t" + owner.getFldEmail().trim() + "     \t" + owner.getFldPhoneNumber().trim() + "  \t" + owner.getFldZipCode().trim());
         }
         if (!hasOwners) {
-            System.out.println("No owners found.");
+            System.out.println("Ingen ejere fundet");
         }
     }
 }

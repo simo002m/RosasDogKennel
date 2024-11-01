@@ -79,6 +79,7 @@ public class Owner {
 
         System.out.println("Lav en ny ejer\n");
 
+        // Input variables used to create owner object
         System.out.print("Indtast ID: ");
         int ownerID = choice.nextInt();
         choice.nextLine();

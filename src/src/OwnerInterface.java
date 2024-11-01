@@ -20,7 +20,7 @@ public class OwnerInterface {
 
         Scanner choice = new Scanner(System.in);
 
-        // declare variable for later user
+        // Declare variable for later user
         int actionChoice;
 
         System.out.println("Velkommen til ejer oversigten!\n\nHer er dine valgmuligheder:");
@@ -35,6 +35,7 @@ public class OwnerInterface {
                 choice.next();
             }
 
+            // Input
             actionChoice = choice.nextInt();
 
             // Pick a menu item based on input of actionChoice
