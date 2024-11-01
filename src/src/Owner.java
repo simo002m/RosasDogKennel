@@ -24,7 +24,7 @@ public class Owner {
 
     }
 
-    public int getFldOwnerId() {
+    public int getFldOwnerID() {
             return fldOwnerID;
         }
 
