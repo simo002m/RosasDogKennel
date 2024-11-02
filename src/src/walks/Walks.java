@@ -1,3 +1,5 @@
+package walks;
+
 import java.util.Scanner;
 
 public class Walks {

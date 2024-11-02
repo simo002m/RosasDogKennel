@@ -2,6 +2,11 @@ import java.util.Scanner;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+// Import packages to be able to use their classes
+import dog.*;
+import owner.*;
+import walks.*;
+
 public class Main {
 
     private static final String URL = "jdbc:sqlserver://localhost;portNumber=1433;databaseName=dbRosasDogKennel";
@@ -18,7 +23,7 @@ public class Main {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Velkommen til Rosas Hundepension");
+        System.out.println("Velkommen til Rosas Hundepension\n");
 
 
         // Variables

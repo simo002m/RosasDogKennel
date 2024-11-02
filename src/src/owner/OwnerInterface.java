@@ -1,3 +1,5 @@
+package owner;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Scanner;
@@ -27,11 +29,14 @@ public class OwnerInterface {
 
         do {
             // Menu
-            System.out.println("\n1. Udskriv alle ejere\n2. Udskriv specifik ejer\n3. Lav ny ejer");
+            System.out.println("\n1. Udskriv alle ejere");
+            System.out.println("2. Udskriv enkelt ejer");
+            System.out.println("3. Lav ny ejer");
+            System.out.println("0. Gå tilbage til hovedmenuen");
 
             // Check if other datatype than int has been typed into Scanner object choice
             while (!choice.hasNextInt()) {
-                System.out.println("\nVenligst indtast en gyldig værdi (et tal mellem 1 - 3)");
+                System.out.println("\nVenligst indtast en gyldig værdi (et tal mellem 0 - 3)");
                 choice.next();
             }
 

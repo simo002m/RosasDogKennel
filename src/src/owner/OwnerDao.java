@@ -1,3 +1,5 @@
+package owner;
+
 public interface OwnerDao {
         void readOwner(int no) throws Exception;
         void readAllOwners() throws Exception;

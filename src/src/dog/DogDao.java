@@ -1,3 +1,5 @@
+package dog;
+
 public interface DogDao {
         void readDog(int no) throws Exception;
         void readAllDogs() throws Exception;

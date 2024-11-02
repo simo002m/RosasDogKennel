@@ -1,3 +1,5 @@
+package owner;
+
 import java.util.Scanner;
 
 public class Owner {
@@ -68,7 +70,7 @@ public class Owner {
     public static void interfaceReadOwner() throws Exception {
         Scanner choice = new Scanner(System.in);
 
-        System.out.println("Vælg en ejer");
+        System.out.println("Indtast ejer ID");
         int ownerChoice = choice.nextInt();
 
         dao.readOwner(ownerChoice);

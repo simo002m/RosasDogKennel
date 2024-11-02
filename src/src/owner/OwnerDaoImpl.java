@@ -1,3 +1,5 @@
+package owner;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -43,6 +45,12 @@ public class OwnerDaoImpl implements OwnerDao {
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, ownerID);
         ResultSet rs = pstmt.executeQuery();
+
+        // Nice formatting of table (display table, not SQl table) headers
+        System.out.println("+" + "-".repeat(3) + "+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(27) + "+" + "-".repeat(11) + "+" + "-".repeat(14) + "+");
+        System.out.println("ID\t|\tNavn\t|\tFødselsdato\t|\t\t\tEmail\t\t\t|\tTlf Nr\t|\tPost Nr    |");
+        System.out.println("+" + "-".repeat(3) + "+" + "-".repeat(11) + "+" + "-".repeat(15) + "+" + "-".repeat(27) + "+" + "-".repeat(11) + "+" + "-".repeat(14) + "+");
+
         if (rs.next()) {
             Owner owner = new Owner();
             owner.setFldOwnerID(rs.getInt(1));
@@ -52,10 +60,10 @@ public class OwnerDaoImpl implements OwnerDao {
             owner.setFldPhoneNumber(rs.getString(5));
             owner.setFldZipCode(rs.getString(6));
 
-            //Print out all the rows
-            System.out.println(owner.getFldOwnerID() + " " + owner.getFldOwnerName().trim() + " " + owner.getFldDateOfBirth().trim() + " " + owner.getFldEmail().trim() + " " + owner.getFldPhoneNumber().trim() + " " + owner.getFldZipCode().trim());
+            //Print out row
+            System.out.println(owner.getFldOwnerID() + "\t" + owner.getFldOwnerName().trim() + "  \t" + owner.getFldDateOfBirth().trim() + "  \t" + owner.getFldEmail().trim() + "     \t" + owner.getFldPhoneNumber().trim() + "  \t" + owner.getFldZipCode().trim());
         } else {
-            System.out.println("No owner found with ID: " + ownerID);
+            System.out.println("Ingen ejer fundet med ID: " + ownerID);
         }
     }
 

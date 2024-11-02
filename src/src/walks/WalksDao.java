@@ -1,4 +1,4 @@
-import java.util.List;
+package walks;
 
 public interface WalksDao {
         void readWalks(int no) throws Exception;
