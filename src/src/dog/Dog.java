@@ -223,7 +223,7 @@ public class Dog {
             System.out.println("Skriv hundens race");
             String fldDogBreed = input.nextLine();
 
-            System.out.println("Skriv hvis din hund har nogle speicelle behov");
+            System.out.println("Skriv hvis din hund har nogle specielle behov");
             String fldSpecialNeeds = input.nextLine();
 
             System.out.println("Skriv hvilken Dato hunden ankommer");

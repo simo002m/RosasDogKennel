@@ -19,7 +19,7 @@ public class DogInterface {
         return conn;
     }
 
-    public static void dogInterface() throws Exception {
+    public static void dogInterfaceMain() throws Exception {
         // Variables
         int userChoice;
         Scanner input = new Scanner(System.in);

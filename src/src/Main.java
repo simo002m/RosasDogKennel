@@ -7,6 +7,8 @@ import dog.*;
 import owner.*;
 import walks.*;
 
+import static dog.DogInterface.*;
+
 public class Main {
 
     private static final String URL = "jdbc:sqlserver://localhost;portNumber=1433;databaseName=dbRosasDogKennel";
@@ -48,7 +50,7 @@ public class Main {
             //directing the user to the menu they wanted to go to
             switch (userChoiceFirstMenu) {
                 case 1:
-                    DogInterface.dogInterface();
+                    dogInterfaceMain();
                     break;
 
                 case 2:
